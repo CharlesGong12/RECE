@@ -1,11 +1,24 @@
-### Reliable and Efficient Concept Erasure of Text-to-Image Diffusion Models
+# Reliable and Efficient Concept Erasure of Text-to-Image Diffusion Models
 
-Chao Gong*, Kai Chen*, Zhipeng Wei, Jingjing Chen, Yu-Gang Jiang
+### Authors
+- Chao Gong\*
+- Kai Chen\*
+- Zhipeng Wei
+- Jingjing Chen
+- Yu-Gang Jiang
 
-Fudan University
+_Fudan University_
 
-ECCV, 2024
+_ECCV 2024_
 
-Thanks for your attention to our work!
+---
 
-We are organizing our code and will release it soon. If you are in hurry to use our code, please contact me at cgong20@fudan.edu.cn/chaogong512@gmail.com.
+Thank you for your interest in our work!
+
+We are currently organizing our code and will release it soon. If you need to use our code urgently, please contact me at:
+
+- **Email:** cgong20@fudan.edu.cn
+- **Alternate Email:** chaogong512@gmail.com
+
+Stay tuned for updates!
+
