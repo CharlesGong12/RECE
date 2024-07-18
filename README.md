@@ -1,8 +1,9 @@
 # Reliable and Efficient Concept Erasure of Text-to-Image Diffusion Models
 
-_ECCV 2024_ | [Arxiv](https://arxiv.org/pdf/2407.12383)
+:star2: _ECCV 2024_ | [Arxiv](https://arxiv.org/pdf/2407.12383) :star2:
 
-### Authors
+**Authors**
+
 [Chao Gong](https://scholar.google.com/citations?user=XYjTyOgAAAAJ&hl=zh-CN)\*, [Kai Chen](https://github.com/kay-ck)\*, Zhipeng Wei, Jingjing Chen, Yu-Gang Jiang
 
 _Fudan University_
