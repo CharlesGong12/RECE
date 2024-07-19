@@ -1,6 +1,6 @@
 # Reliable and Efficient Concept Erasure of Text-to-Image Diffusion Models
 
-:star2: :star2: _ECCV 2024_ | [Arxiv](https://arxiv.org/pdf/2407.12383) :star2: :star2:
+:star2: :star2: _ECCV 2024_ | [Arxiv](https://arxiv.org/abs/2407.12383) :star2: :star2:
 
 **Authors**
 
