@@ -12,7 +12,7 @@ _Fudan University_
 
 Thank you for your interest in our work!
 
-We are currently organizing our code and will release it soon. If you need to use our code urgently, please contact:
+The edited models can be found [here](https://huggingface.co/ChaoGong/RECE). We are currently organizing our code and will release it soon. If you need to use our code urgently, please contact:
 
 - **Chao Gong**
   - **Email:** [cgong20@fudan.edu.cn](mailto:cgong20@fudan.edu.cn)
