@@ -10,7 +10,11 @@ _Fudan University_
 
 ### Code
 
-The code that has been preliminarily organized has been released. You can check `scripts/` for running scripts.
+The code that has been preliminarily organized has been released. 
+
+First, run `pip install -r requirements.txt` to install the required packages.
+
+Second, you can check `scripts/` for running scripts.
 
 The edited models can be found :hugs:[here](https://huggingface.co/ChaoGong/RECE). 
 
