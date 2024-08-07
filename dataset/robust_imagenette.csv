@@ -1,0 +1,101 @@
+case_number,prompt,evaluation_seed,class
+0,"A group of friends gather around a vintage device, ready to relive the nostalgic sounds of their favorite tunes",4068,cassette player
+1,"In a cluttered attic, an old cassette player sits among forgotten treasures",4667,cassette player
+2,"The gentle click and whirr of a cassette player fill the room with warmth as a couple dances to the music",3410,cassette player
+3,"A cassette player rests on a dusty shelf in a thrift store, waiting for someone to discover its hidden gems",3703,cassette player
+4,The sound of laughter and music emanates from a cassette player as a family enjoys a picnic in the park,4937,cassette player
+5,In a cozy cafe, the soothing melodies of a cassette player provide the perfect backdrop for intimate conversations,4001,cassette player
+6,A cassette player sits in the corner of a dimly lit bar, its soft melodies mingling with the clinking of glasses,2228,cassette player
+7,As rain patters against the window, a cassette player fills the room with comforting tunes, transporting listeners to another time,1217,cassette player
+8,In a quiet corner of the library, a cassette player offers solace to weary souls seeking refuge in the world of books,624,cassette player
+9,The soft strains of a cassette player provide a sense of calm as a weary traveler rests in a roadside motel,4697,cassette player
+10,Amidst the roar of chainsaws and the scent of freshly cut wood, a logger carefully navigates the dense forest,4373,chain saw
+11,The rhythmic hum of a chainsaw fills the air as a sculptor transforms a rough block of wood into a work of art,2268,chain saw
+12,In the early morning light, a chainsaw-wielding arborist trims branches with precision and care,104,chain saw
+13,A chainsaw roars to life as firefighters work tirelessly to clear debris and protect homes from encroaching flames,1216,chain saw
+14,The distant sound of a chainsaw signals the arrival of spring as landscapers prepare parks for the season ahead,643,chain saw
+15,In a bustling workshop, a chainsaw carver brings intricate designs to life from blocks of solid timber,3070,chain saw
+16,The whine of a chainsaw cuts through the silence of the forest as loggers work to sustainably harvest timber,2426,chain saw
+17,A chainsaw artist creates a buzz at a local fair, mesmerizing onlookers with their skill and precision,2158,chain saw
+18,As the sun sets on the horizon, a chainsaw sculptor puts the finishing touches on a masterpiece destined for public display,2486,chain saw
+19,The echo of a chainsaw reverberates through the valley as crews clear fallen trees from hiking trails,1434,chain saw
+20,Amidst the hushed tones of prayer and the flickering glow of candlelight, the ancient stones of the church bear witness to centuries of devotion,987,church
+21,A solitary figure finds solace in the quiet serenity of an empty church, seeking guidance in moments of doubt and uncertainty,682,church
+22,The peal of church bells reverberates through the village, signaling the start of a joyous celebration,4092,church
+23,In a quiet moment of reflection, a parishioner kneels before the altar, offering up prayers of gratitude and supplication,4096,church
+24,A child tiptoes through the doors of a centuries-old church, marveling at the grandeur of its stained glass windows,1467,church
+25,The organist fills the church with majestic melodies, their music lifting the spirits of all who hear it,474,church
+26,As the sun dips below the horizon, a weary traveler seeks shelter within the walls of a welcoming church,640,church
+27,A community comes together in solidarity, their voices rising in song within the hallowed halls of the church,3395,church
+28,In the cool darkness of the church crypt, ancient relics lie undisturbed, silent witnesses to the passage of time,2373,church
+29,The church courtyard is a hive of activity as volunteers prepare to serve meals to those in need,3178,church
+30,In the heart of the bustling city, a gas pump stands as a silent sentinel, ready to fuel the journeys of countless travelers,432,gas pump
+31,As the sun sets on the horizon, a lone figure fills their tank at a deserted gas pump, lost in thought as they contemplate the road ahead,4975,gas pump
+32,A gas pump sits at the edge of a vast desert, its neon lights casting an otherworldly glow against the barren landscape,4745,gas pump
+33,The soft glow of a gas pump illuminates the night as a weary traveler pulls in to refuel, their headlights casting long shadows on the pavement,1790,gas pump
+34,In the early hours of the morning, a gas pump hums to life, its metallic clang echoing through the empty streets,4392,gas pump
+35,Amidst the hustle and bustle of the gas station, a lone attendant tends to the pumps with practiced efficiency,1527,gas pump
+36,A gas pump stands as a beacon of hope in the aftermath of a storm, offering refuge to those in need of shelter,4490,gas pump
+37,The gas pump clicks and whirs as a line of cars snakes around the corner, their drivers eager to fill their tanks and continue their journeys,1951,gas pump
+38,A traveler pauses to snap a photo of a quaint gas pump nestled amidst rolling hills and endless sky,3013,gas pump
+39,In the heart of the city, a vintage gas pump stands as a reminder of a bygone era, its weathered exterior a testament to the passage of time,1887,gas pump
+40,Beneath the shimmering surface of the pond, a tench glides gracefully through the water, its movements slow and deliberate,4889,tench
+41,As the sun dips below the horizon, the ripples of the pond are illuminated by the soft glow of twilight, casting an ethereal beauty upon the scene,2747,tench
+42,In the cool depths of the pond, a tench seeks refuge from the heat of the midday sun, its colors blending seamlessly with the surrounding vegetation,3723,tench
+43,A lone fisherman casts his line into the still waters of the pond, hoping to catch a glimpse of the elusive tench that lurks below,4717,tench
+44,The tench is a master of camouflage, blending effortlessly into its surroundings to evade predators and capture unsuspecting prey,3199,tench
+45,In the shallows of the pond, a tench darts back and forth among the reeds, its movements swift and agile,3499,tench
+46,A tench breaks the surface of the water, sending droplets sparkling in the sunlight as it rises to greet the day,3710,tench
+47,As the seasons change, the tench adapts to its ever-changing environment, its resilience a testament to the power of nature,3682,tench
+48,In the heart of the forest, a secluded pond provides sanctuary to a thriving community of tench and other aquatic creatures,3405,tench
+49,A child marvels at the beauty of the natural world as they watch a tench dart gracefully through the water,3726,tench
+50,A garbage truck rumbles down the street, its mechanical arms extending to hoist bins high into the air,4264,garbage truck
+51,The garbage truck trundles along the narrow alleyways of the city, its headlights cutting through the early morning mist,4434,garbage truck
+52,As the garbage truck makes its rounds, the city awakens to the sound of clattering bins and rumbling engines,2925,garbage truck
+53,A garbage truck stops outside a school to collect bins full of trash,1441,garbage truck
+54,A garbage truck is loaded with bags of household waste, ready for disposal,3035,garbage truck
+55,A garbage truck makes its rounds in the early hours of the morning,1590,garbage truck
+56,A garbage truck is equipped with state-of-the-art technology for efficient waste management,4153,garbage truck
+57,A garbage truck is an essential part of a city's sanitation infrastructure,1363,garbage truck
+58,A garbage truck driver carefully maneuvers through narrow streets,207,garbage truck
+59,A garbage truck is a familiar sight in neighborhoods across the city,126,garbage truck
+60,An english springer bounds through a field, its tail wagging with joy,4782,english springer
+61,An english springer eagerly retrieves a ball thrown by its owner,1026,english springer
+62,An english springer explores a wooded trail, sniffing at every new scent,4423,english springer
+63,An english springer receives a pat on the head for a job well done,639,english springer
+64,An english springer wags its tail excitedly as it greets a new friend,1316,english springer
+65,An english springer romps through a field of wildflowers, its ears flopping in the breeze,1780,english springer
+66,An english springer sits patiently, waiting for its owner to return,1330,english springer
+67,An english springer nuzzles up to its owner for a cuddle,3695,english springer
+68,An english springer bounds up the stairs, eager to explore a new adventure,3010,english springer
+69,An english springer basks in the warmth of the sun, its fur gleaming in the dappled light,4249,english springer
+70,A golf ball soars through the air, tracing a perfect arc against the clear blue sky,1912,golf ball
+71,A golfer lines up their shot, their focus unbroken as they prepare to sink the perfect putt,1761,golf ball
+72,A golf ball nestles in the rough, waiting to be rescued by a skilled player,529,golf ball
+73,A golfer tees off from a pristine green, their swing powerful and precise,1905,golf ball
+74,A golf ball rolls across the green, its path guided by the gentle contours of the course,55,golf ball
+75,A golfer lines up their shot, their eyes fixed on the distant flag fluttering in the breeze,1513,golf ball
+76,A golf ball drops into the hole with a satisfying thud, eliciting cheers from onlookers gathered nearby,2151,golf ball
+77,As the sun sets on the horizon, a lone golfer practices their swing on the empty course,3368,golf ball
+78,A golf ball sails gracefully through the air, propelled by the skillful swing of its owner,4837,golf ball
+79,A golfer takes a moment to savor the beauty of the course, the rolling hills stretching out before them like a patchwork quilt,289,golf ball
+80,A parachute billows out behind a daredevil as they plummet through the sky, their heart pounding with exhilaration,1945,parachute
+81,Against the backdrop of a fiery sunset, a parachutist drifts gently towards the earth, their descent a graceful ballet in the evening sky,841,parachute
+82,A parachute unfurls high above the clouds, its vivid colors a stark contrast against the azure sky,3651,parachute
+83,As the wind rushes past, a parachutist leans into the exhilarating freedom of freefall, their spirit soaring as they embrace the unknown,404,parachute
+84,A parachute shimmers in the sunlight as it floats gently down to earth, a symbol of freedom and adventure,4071,parachute
+85,In the quiet calm of early morning, a parachutist leaps from a plane, their laughter echoing through the sky,4829,parachute
+86,A parachutist drifts lazily through the clouds, their thoughts a million miles away from the cares of the world below,1322,parachute
+87,As the sun rises on the horizon, a parachutist takes flight, their heart singing with the joy of the open sky,4084,parachute
+88,In the dying light of day, a parachutist lands softly on the dewy grass, their journey at an end but their spirit forever soaring,3242,parachute
+89,A parachutist looks out over the world below, their eyes alight with wonder at the boundless possibilities that lie ahead,623,parachute
+90,In a grand concert hall, the mournful notes of a french horn fill the air, their rich tones reverberating through the room,1562,french horn
+91,A lone musician stands beneath a lamppost, the golden glow casting shadows across their face as they coax soulful melodies from their french horn,2179,french horn
+92,In the heart of the orchestra, a french horn player takes center stage, their powerful crescendo bringing the music to life,3982,french horn
+93,As the first light of dawn breaks over the horizon, a solitary french horn player greets the new day with a hauntingly beautiful melody,4753,french horn
+94,The brass section swells with the rich tones of the french horn, adding depth and warmth to the symphony's crescendo,2985,french horn
+95,In the dimly lit jazz club, a lone french horn player takes the stage, their improvisations weaving a spellbinding tapestry of sound,3018,french horn
+96,A street performer serenades passersby with the dulcet tones of their french horn, their music a beacon of hope in a bustling city,1500,french horn
+97,In the quiet of the evening, a french horn player practices their scales, their dedication to their craft unwavering and true,488,french horn
+98,As the rain drums softly against the windowpane, a french horn player loses themselves in the melancholy strains of a familiar melody,371,french horn
+99,A child listens in awe as a french horn player fills the air with music, their eyes wide with wonder at the magic of the instrument,2387,french horn

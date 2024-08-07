@@ -1,0 +1,27 @@
+torch==1.7.1
+torchvision==0.8.2
+scikit-learn == 0.23.2
+sentence_transformers == 0.3.6
+transformers == 3.1.0
+setproctitle == 1.2
+pandas == 1.0.3
+multicoretsne == 0.1
+rtpt == 0.0.4
+tqdm == 4.31.1
+nltk == 3.5
+pandarallel
+regex==2020.7.14
+ftfy==6.0.3
+captum==0.4.0
+seaborn==0.11.2
+torchmetrics==0.4.1
+timm==0.4.12
+captum==0.4.0
+ete3==3.1.2
+wordcloud
+multidict
+embedding_reader
+fire
+git+https://github.com/openai/CLIP.git
+wordclould==1.8.1
+multidict==5.2.0
