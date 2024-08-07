@@ -29,3 +29,6 @@ If you find our work helpful, please leave us a star and cite our paper.
     year={2024}
   }
   ```
+
+## Acknowledgement
+Some code is borrowed from [UCE](https://github.com/rohitgandikota/unified-concept-editing).
