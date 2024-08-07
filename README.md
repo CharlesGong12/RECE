@@ -8,7 +8,7 @@
 
 _Fudan University_
 
-### Code
+## Code
 
 The code that has been preliminarily organized has been released. 
 
@@ -18,7 +18,7 @@ Second, you can check `scripts/` for running scripts.
 
 The edited models can be found :hugs:[here](https://huggingface.co/ChaoGong/RECE). 
 
-### Citation
+## Citation
 If you find our work helpful, please leave us a star and cite our paper.
   
   ```
