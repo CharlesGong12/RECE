@@ -40,7 +40,7 @@ if __name__ == '__main__':
     parser.add_argument('--concepts', help='concepts to erase', type=str, required=True)
     parser.add_argument('--old_target_concept', help='old target concept ever used in UCE', type=str, required=False, default=None)
     parser.add_argument('--seed', help='random seed', type=int, required=False, default=42)
-    parser.add_argument('--epochs', help='epochs to train', type=int, required=False, default=10)
+    parser.add_argument('--epochs', help='epochs to train', type=int, required=False, default=5)
     parser.add_argument('--test_csv_path', help='path to csv file with prompts', type=str, default='dataset/nudity.csv')
     parser.add_argument('--guided_concepts', help='whether to use old prompts to guide', type=str, default=None)
     parser.add_argument('--preserve_concepts', help='whether to preserve old prompts', type=str, default=None)
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     parser.add_argument('--lamb', help='scale for init', type=float, required=False, default=0.1)
     parser.add_argument('--save_path', help='path to save the model', type=str, required=False, default='ckpt2/SD_adv_train/adv_train_concepts')
     parser.add_argument('--concept_type', help='type of concept being erased', type=str, required=True)
-    parser.add_argument('--emb_computing', help='close-form or gradient-descent, standard regularization or surrogate regularization', type=str, required=True, default='close_regzero', choices=['close_standardreg', 'close_surrogatereg', 'gd', 'close_regzero'])
+    parser.add_argument('--emb_computing', help='close-form, standard regularization or surrogate regularization', type=str, required=True, default='close_regzero', choices=['close_standardreg', 'close_surrogatereg', 'close_regzero'])
     parser.add_argument('--reg_item', help='use 1st, 2nd or both items in surrogate regularization', type=str, required=False, default='1st', choices=['1st', '2nd','both'])
     parser.add_argument('--regular_scale', help='scale for regularization', type=float, required=False, default=1e-1)
     parser.add_argument('--num_samples', help='number of samples for gradient descent', type=int, required=False, default=1)
@@ -152,18 +152,8 @@ if __name__ == '__main__':
     
     
     if preserve_concepts is None:
-        if concept_type == 'art':
-            prompts_df = pd.read_csv('data/artists1734_prompts.csv')
-
-            retain_texts = list(prompts_df.artist.unique())
-            old_texts_lower = [text.lower() for text in old_texts]
-            preserve_concepts = [text for text in retain_texts if text.lower() not in old_texts_lower]
-            print_text+=f'-preserving_{len(old_texts)}artists'
-            retain_texts = random.sample(preserve_concepts, len(old_texts))
-            print_text+=f'-preserve_true'
-        else:
-            retain_texts = [' ' for _ in old_texts]
-            print_text+=f'-preserve_false'
+        retain_texts = [' ' for _ in old_texts]
+        print_text+=f'-preserve_false'
     else:
         retain_texts = random.sample(preserve_concepts, len(old_texts))
         print_text+=f'-preserve_true'
@@ -181,17 +171,6 @@ if __name__ == '__main__':
     print_text = print_text.lower()
     print(print_text)
     
-    # Below is for gradient descent
-    # TODO
-    # adv_train_steps = 100
-    adv_train_steps = 1000
-    n_samples = 50 
-    start_t = 5
-    sampled_t = [start_t + i * adv_train_steps // n_samples for i in range(n_samples)]
-    
-    
-    scheduler = LMSDiscreteScheduler(beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear", num_train_timesteps=adv_train_steps)
-    
     if target_ckpt == '':
         args.save_path = f'{args.save_path}_scratch'
     if 'close' in emb_computing:
@@ -199,8 +178,6 @@ if __name__ == '__main__':
             save_path = f'{args.save_path}/{concept_type}/{emb_computing}_regitem_{reg_item}/{print_text}/regular_{regular_scale}/seed_{seed}'
         else:
             save_path = f'{args.save_path}/{concept_type}/{emb_computing}/{print_text}/regular_{regular_scale}/seed_{seed}'
-    elif 'gd' in emb_computing:
-        save_path = f'{args.save_path}/{concept_type}/{emb_computing}/{print_text}/seed_{seed}'
     os.makedirs(save_path, exist_ok=True)
 
     detect_rates = {}
@@ -232,17 +209,17 @@ if __name__ == '__main__':
     if target_ckpt != '':
         ldm_stable.unet.load_state_dict(torch.load(target_ckpt))
         ldm_stable.to(device)
-    generate_images(ldm_stable, dev_df, f'{save_path}/uce', ddim_steps=ddim_steps, num_samples=num_samples)
-    if concept_type == 'nudity':
-        detect_rate = compute_nudity_rate(f'{save_path}/uce')
-        print(f'Nudity rate of uce: {detect_rate}')
-        detect_rates['uce'] = detect_rate
-    if concept_type == 'unsafe':
-        detect_rate = run_q16_imagefolder(q16_args, f'{save_path}/uce/imgs', f'{save_path}/uce')
-        detect_rates['uce'] = detect_rate
-        print(f'Inappropriate rate of UCE is {detect_rate}')
-    if detect_rate < lowest_detect_rate:
-        lowest_detect_rate = detect_rate
+        generate_images(ldm_stable, dev_df, f'{save_path}/uce', ddim_steps=ddim_steps, num_samples=num_samples)
+        if concept_type == 'nudity':
+            detect_rate = compute_nudity_rate(f'{save_path}/uce')
+            print(f'Nudity rate of uce: {detect_rate}')
+            detect_rates['uce'] = detect_rate
+        if concept_type == 'unsafe':
+            detect_rate = run_q16_imagefolder(q16_args, f'{save_path}/uce/imgs', f'{save_path}/uce')
+            detect_rates['uce'] = detect_rate
+            print(f'Inappropriate rate of UCE is {detect_rate}')
+        if detect_rate < lowest_detect_rate:
+            lowest_detect_rate = detect_rate
     
     ldm_stable.to(device)
 

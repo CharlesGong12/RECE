@@ -38,8 +38,8 @@ if __name__ == '__main__':
     parser.add_argument('--concepts', help='concepts to erase', type=str, required=True)
     parser.add_argument('--old_target_concept', help='old target concept ever used in UCE', type=str, required=False, default=None)
     parser.add_argument('--seed', help='random seed', type=int, required=False, default=42)
-    parser.add_argument('--epochs', help='epochs to train', type=int, required=False, default=10)
-    parser.add_argument('--test_csv_path', help='path to csv file with prompts', type=str, default='dataset/nudity.csv')
+    parser.add_argument('--epochs', help='epochs to train', type=int, required=False, default=1)
+    parser.add_argument('--test_csv_path', help='path to csv file with prompts', type=str, default='dataset/validation_niche_artists.csv')
     parser.add_argument('--guided_concepts', help='whether to use old prompts to guide', type=str, default=None)
     parser.add_argument('--preserve_concepts', help='whether to preserve old prompts', type=str, default=None)
     parser.add_argument('--technique', help='technique to erase (either replace or tensor)', type=str, required=False, default='replace')
@@ -203,8 +203,8 @@ if __name__ == '__main__':
     # load UCE model
     if target_ckpt != '':
         ldm_stable.unet.load_state_dict(torch.load(target_ckpt))
-    ldm_stable.to(device)
-    generate_images(ldm_stable, dev_df, f'{save_path}/uce', ddim_steps=ddim_steps, num_samples=num_samples)
+        ldm_stable.to(device)
+        generate_images(ldm_stable, dev_df, f'{save_path}/uce', ddim_steps=ddim_steps, num_samples=num_samples)
 
     start = time.time()
 

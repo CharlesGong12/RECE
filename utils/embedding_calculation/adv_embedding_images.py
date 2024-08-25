@@ -13,10 +13,10 @@ import tqdm
 import json
 import numpy as np
 from PIL import Image
-from ...attack_methods import *
-from ...execs import generate_images
-from ...utils import UnlearnDiff_loss_function, list_Image_to_tensor, generate_latents, P4D_loss_function
-from ...execs import compute_nudity_rate
+from attack_methods import *
+from execs import generate_images
+from utils import list_Image_to_tensor, generate_latents
+from execs import compute_nudity_rate
 
 def setup_seed(seed=123):
     random.seed(seed)

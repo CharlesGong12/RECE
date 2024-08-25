@@ -6,7 +6,7 @@ import os
 from diffusers import LMSDiscreteScheduler, StableDiffusionPipeline, UNet2DConditionModel
 import argparse
 import sys
-from ..execs import compute_nudity_rate
+from execs import compute_nudity_rate
 
 def generate_images(model, df, save_path, device='cuda:0', guidance_scale = 7.5, image_size=512, ddim_steps=50, num_samples=1, from_case=0):
         

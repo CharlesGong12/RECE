@@ -117,7 +117,7 @@ if __name__ == '__main__':
     parser.add_argument('--concepts', help='concepts to erase', type=str, required=True)
     parser.add_argument('--old_target_concept', help='old target concept ever used in UCE', type=str, required=False, default=None)
     parser.add_argument('--seed', help='random seed', type=int, required=False, default=42)
-    parser.add_argument('--epochs', help='epochs to train', type=int, required=False, default=5)
+    parser.add_argument('--epochs', help='epochs to train', type=int, required=False, default=1)
     parser.add_argument('--test_csv_path', help='path to csv file with prompts', type=str, default='dataset/small_imagenet_prompts.csv')
     parser.add_argument('--guided_concepts', help='whether to use old prompts to guide', type=str, default=None)
     parser.add_argument('--preserve_concepts', help='whether to preserve old prompts', type=str, default=None)
@@ -130,7 +130,7 @@ if __name__ == '__main__':
     parser.add_argument('--lamb', help='scale for init', type=float, required=False, default=0.1)
     parser.add_argument('--save_path', help='path to save the model', type=str, required=False, default='ckpt2/SD_adv_train')
     parser.add_argument('--concept_type', help='type of concept being erased', type=str, required=True)
-    parser.add_argument('--emb_computing', help='close-form or gradient-descent, standard regularization or surrogate regularization', type=str, required=False, default='close_regzero', choices=['close_standardreg', 'close_surrogatereg', 'gd', 'close_regzero'])
+    parser.add_argument('--emb_computing', help='close-form or gradient-descent, standard regularization or surrogate regularization', type=str, required=False, default='close_regzero', choices=['close_standardreg', 'close_surrogatereg', 'close_regzero'])
     parser.add_argument('--reg_item', help='use 1st, 2nd or both items in surrogate regularization', type=str, required=False, default='1st', choices=['1st', '2nd','both'])
     parser.add_argument('--regular_scale', help='scale for regularization', type=float, required=False, default=1e-3)
     parser.add_argument('--num_samples', help='number of samples for gradient descent', type=int, required=False, default=1)
@@ -251,47 +251,33 @@ if __name__ == '__main__':
     print_text += f"-lamb_{lamb}"
     print_text = print_text.lower()
     print(print_text)
-    
-    # Below is for gradient descent
-    # TODO
-    # adv_train_steps = 100
-    adv_train_steps = 1000
-    n_samples = 50 
-    start_t = 5
-    sampled_t = [start_t + i * adv_train_steps // n_samples for i in range(n_samples)]
 
-    
-    
-    scheduler = LMSDiscreteScheduler(beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear", num_train_timesteps=adv_train_steps)
     
     if 'close' in emb_computing:
         if 'surrogate' in emb_computing:
             save_path = f'{args.save_path}/{concept_type}/{emb_computing}_regitem_{reg_item}/{print_text}/regular_{regular_scale}/seed_{seed}'
         else:
             save_path = f'{args.save_path}/{concept_type}/{emb_computing}/{print_text}/regular_{regular_scale}/seed_{seed}'
-    elif 'gd' in emb_computing:
-        save_path = f'{args.save_path}/{concept_type}/{emb_computing}/{print_text}/seed_{seed}'
     os.makedirs(save_path, exist_ok=True)
 
     target_acc = {}
     other_acc = {}
 
-    # generate_images(ldm_stable, dev_df, f'{save_path}/sd', ddim_steps=ddim_steps, num_samples=num_samples)
+    generate_images(ldm_stable, dev_df, f'{save_path}/sd', ddim_steps=ddim_steps, num_samples=num_samples)
     if len(old_texts) == 1:
         os.makedirs(f'{save_path}/sd', exist_ok=True)
         target_acc['sd'], other_acc['sd'] = image_classify("/share_io03_ssd/ckpt2/gongchao/SD_adv_train/object/close_regzero/tench_-towards_uncond-preserve_false-sd_1_4-method_replace-erase_1-preserve_0.1-lamb_0.1/regular_0.001/seed_42/sd",
                                                             args.test_csv_path, f'{save_path}/sd/classification.csv', old_texts[0].lower())
         print(f'SD: target {target_acc["sd"]}, others {other_acc["sd"]}')
-    # TODO: add the case for multiple concepts
 
     # load UCE model
     if target_ckpt != '':
         ldm_stable.unet.load_state_dict(torch.load(target_ckpt))
-    ldm_stable.to(device)
-    generate_images(ldm_stable, dev_df, f'{save_path}/uce', ddim_steps=ddim_steps, num_samples=num_samples)
-    if len(old_texts) == 1:
-        target_acc['uce'], other_acc['uce'] = image_classify(f'{save_path}/uce', args.test_csv_path, f'{save_path}/uce/classification.csv', old_texts[0].lower())
-        print(f'UCE: target {target_acc["uce"]}, others {other_acc["uce"]}')
+        ldm_stable.to(device)
+        generate_images(ldm_stable, dev_df, f'{save_path}/uce', ddim_steps=ddim_steps, num_samples=num_samples)
+        if len(old_texts) == 1:
+            target_acc['uce'], other_acc['uce'] = image_classify(f'{save_path}/uce', args.test_csv_path, f'{save_path}/uce/classification.csv', old_texts[0].lower())
+            print(f'UCE: target {target_acc["uce"]}, others {other_acc["uce"]}')
 
     start = time.time()
 

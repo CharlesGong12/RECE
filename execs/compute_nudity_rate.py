@@ -3,7 +3,6 @@ import argparse
 import json
 import pandas as pd
 import sys
-sys.path.append('/vhome/gongchao/UCE_acceleration/adv-train')
 from utils.metrics.nudity_eval import detectNudeClasses, if_nude
 
 def compute_nudity_rate(root, threshold=0.6):

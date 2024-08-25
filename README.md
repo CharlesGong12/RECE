@@ -12,11 +12,25 @@ _Fudan University_
 
 The code that has been preliminarily organized has been released. 
 
-First, run `pip install -r requirements.txt` to install the required packages.
+1. Run `pip install -r requirements.txt` to install the required packages.
 
-Second, you can check `scripts/` for running scripts.
+2. You can check `scripts/` for running scripts.
 
-The edited models can be found :hugs:[here](https://huggingface.co/ChaoGong/RECE). 
+The edited models of RECE can be found :hugs:[here](https://huggingface.co/ChaoGong/RECE). 
+
+## Erasure Details
+
+For all concepts, the coefficients of Eq.3 are: $\lambda_1=0.1$ and $\lambda_2=0.1$.
+
+The regularization coefficients $\lambda$ are:
+
+1. Nudity and unsafe concepts(I2P concepts), $\lambda=1e-1$.
+2. Artistic styles, $\lambda=1e-3$.
+3. Difficult objects (e.g., church and garbage truck), $\lambda=1e-3$.
+4. Easy objects (e.g., English Springer, golf ball and parachute), $\lambda=1e-1$.
+5. For other objects where erasing accuracies reach 0 using UCE, RECE's further erasure is not applied.
+
+**We will update the Arxiv version to correct/align the experiment settings.**
 
 ## Citation
 If you find our work helpful, please leave us a star and cite our paper.

@@ -6,7 +6,7 @@ import argparse
 import os
 from diffusers import StableDiffusionPipeline
 import sys
-from ...utils.embedding_calculation import embedding2img, setup_seed
+from . import embedding2img, setup_seed
 import pandas as pd
 
 def close_form_emb(model, model_copy, concept, with_to_k=True, save_path=None, save_name=None, old_target_concept=None, regeular_scale=1e-3, seed=123, reg_item='both'):
