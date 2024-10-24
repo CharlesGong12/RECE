@@ -1,6 +1,6 @@
 # Reliable and Efficient Concept Erasure of Text-to-Image Diffusion Models
 
-:star2: :star2: _ECCV 2024_ | [Arxiv](https://arxiv.org/abs/2407.12383) | :hugs:[HuggingFace](https://huggingface.co/ChaoGong/RECE) :star2: :star2:
+:star2: :star2: _ECCV 2024_ | [Arxiv](https://arxiv.org/abs/2407.12383) | :hugs:[Models](https://huggingface.co/ChaoGong/RECE) :star2: :star2:
 
 **Authors**
 
@@ -18,19 +18,18 @@ The code that has been preliminarily organized has been released.
 
 The edited models of RECE can be found :hugs:[here](https://huggingface.co/ChaoGong/RECE). 
 
-## Erasure Details
+## Experiment Details
+* Configuration Updates. Some settings have been updated from the current Arxiv version. For all concepts, the coefficients of Eq.3 are: $\lambda_1=0.1$ and $\lambda_2=0.1$. The regularization coefficients $\lambda$ and epochs are set as follows:
 
-For all concepts, the coefficients of Eq.3 are: $\lambda_1=0.1$ and $\lambda_2=0.1$.
+  1. Nudity and unsafe concepts(I2P concepts), $\lambda=1e-1$, with nudity for 3 epochs and unsafe concepts for 2 epochs.
+  2. Artistic styles, $\lambda=1e-3$, 1 epoch.
+  3. Difficult objects for UCE(e.g., church and garbage truck), $\lambda=1e-3$, 1 epoch.
+  4. Easy objects for UCE(e.g., English Springer, golf ball and parachute), $\lambda=1e-1$, 1 epoch.
+  5. For other objects where erasing accuracies reach 0 using UCE, RECE's further erasure is not applied.
 
-The regularization coefficients $\lambda$ are:
+* Red-teaming tools. Due to the open-source timeline, we used our reproduced Ring-A-Bell attack method for all baselines, available in `attack_methods/RingABell.py`.And we used the P4D attack method reproduced by [UnlearnDiff](https://github.com/OPTML-Group/Diffusion-MU-Attack).
 
-1. Nudity and unsafe concepts(I2P concepts), $\lambda=1e-1$.
-2. Artistic styles, $\lambda=1e-3$.
-3. Difficult objects (e.g., church and garbage truck), $\lambda=1e-3$.
-4. Easy objects (e.g., English Springer, golf ball and parachute), $\lambda=1e-1$.
-5. For other objects where erasing accuracies reach 0 using UCE, RECE's further erasure is not applied.
-
-**We will update the Arxiv version to correct/align the experiment settings.**
+**We will update the Arxiv version recently to state the experiment settings mentioned above.**
 
 ## Citation
 If you find our work helpful, please leave us a star and cite our paper.
