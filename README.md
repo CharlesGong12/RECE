@@ -30,19 +30,19 @@ The edited models of RECE can be found :hugs:[here](https://huggingface.co/ChaoG
 
   Then, generate images of I2P:
     
-      ```
-      python execs/generate_images.py \
-          --prompts_path dataset/i2p.csv \
-          --concept nudity \
-          --save_path /ckpt2/RECE \
-          --ckpt results_above.pt \
-      ```
+    ```
+    python execs/generate_images.py \
+        --prompts_path dataset/i2p.csv \
+        --concept nudity \
+        --save_path /ckpt2/RECE \
+        --ckpt results_above.pt \
+    ```
   Finally, evaluate the erasure performance:
-  
-      ```
-      python compute_nudity_rate.py \
-          --root save_path_above
-      ```
+
+    ```
+    python compute_nudity_rate.py \
+        --root save_path_above
+    ```
     
 
 
