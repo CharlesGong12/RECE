@@ -118,7 +118,7 @@ if __name__ == '__main__':
     parser.add_argument('--old_target_concept', help='old target concept ever used in UCE', type=str, required=False, default=None)
     parser.add_argument('--seed', help='random seed', type=int, required=False, default=42)
     parser.add_argument('--epochs', help='epochs to train', type=int, required=False, default=1)
-    parser.add_argument('--test_csv_path', help='path to csv file with prompts', type=str, default='dataset/small_imagenet_prompts.csv')
+    parser.add_argument('--test_csv_path', help='path to csv file with prompts', type=str, default='dataset/validation_imagenet_prompts.csv')
     parser.add_argument('--guided_concepts', help='whether to use old prompts to guide', type=str, default=None)
     parser.add_argument('--preserve_concepts', help='whether to preserve old prompts', type=str, default=None)
     parser.add_argument('--technique', help='technique to erase (either replace or tensor)', type=str, required=False, default='replace')

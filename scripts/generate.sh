@@ -1,4 +1,4 @@
-python /vhome/gongchao/UCE_acceleration/adv-train/execs/generate_images.py \
+python execs/generate_images.py \
     --prompts_path dataset/coco_30k.csv \
     --concept coco_erasednudity \
     --save_path /ckpt2/RECE \
@@ -7,7 +7,7 @@ python /vhome/gongchao/UCE_acceleration/adv-train/execs/generate_images.py \
     --df_start 10000
 
     
-python /vhome/gongchao/UCE_acceleration/adv-train/attack_methods/RingABell.py \
+python attack_methods/RingABell.py \
     --csv_file dataset/vangogh-ring-a-bell.csv\
     --img_path /path_to_save_images \
     --ckpt xxxx.pt \
